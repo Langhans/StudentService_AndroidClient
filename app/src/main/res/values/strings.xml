@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">StudentsClient</string>
+    <string name="title_activity_course">CourseActivity</string>
+    <string name="TAG_STUDENT_ID">student_id</string>
+    <string name="TAG_STUDENT_NAME">student_name</string>
+    <string name="TEXT_PLEASE_WAIT">Please wait...</string>
+    <string name="TEXT_LABLE_CACHEDAT">"Cached@ "</string>
+    <string name="RADIO_SORT_BYNAME">sort by name</string>
+    <string name="RADIO_SORT_BYID">sort by Id</string>
+
+
+</resources>

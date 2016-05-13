@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="dateFormats_Entry">
+        <item>"12-11-1999 15:03"</item>
+        <item>"12-11-99 15:03"</item>
+        <item>"1999-11-12 15:03"</item>
+        <item>"99-11-12 15:03"</item>
+    </string-array>
+
+    <string-array name="dateFormats_Value">
+        <item>"dd-MM-yyyy HH:mm"</item>
+        <item>"dd-MM-yy HH:mm"</item>
+        <item>"yyyy-MM-dd HH:mm"</item>
+        <item>"yy-MM-dd HH:mm"</item>
+    </string-array>
+
+</resources>

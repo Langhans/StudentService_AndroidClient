@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Service Provider settings">
+
+    <EditTextPreference
+        android:title="SERVICE HOST"
+        android:key="HTTP_GET_SERVICE_HOST"
+        android:defaultValue="http://10.0.2.2:8080/StudentService/service"
+        android:summary="Host for service provider..."/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Appearance">
+
+    <ListPreference
+        android:title="DATE FORMAT"
+        android:key="DATEFORMAT"
+        android:summary="Date format of the cached@ label"
+        android:entries="@array/dateFormats_Entry"
+        android:entryValues="@array/dateFormats_Value"
+        android:defaultValue="yyyy-MM-yy HH:mm"
+        />
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>
