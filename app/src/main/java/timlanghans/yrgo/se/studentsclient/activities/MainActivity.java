@@ -36,6 +36,11 @@ import timlanghans.yrgo.se.studentsclient.dataManager.IDataManager;
 
 public class MainActivity extends AppCompatActivity implements IClientCallbackListener{
 
+  /*
+  This comment has been entered to test the git version handling
+   */
+
+
   // this activity shares itself so other classes can get the App-Context
   public static Activity mainActivity;
 
