@@ -43,10 +43,8 @@ public class MainActivity extends AppCompatActivity implements IClientCallbackLi
           MainActivity.class.getName();
 
   private IDataManager data ;
-
   private Comparator<Student> sorter = null;
-
-private ArrayAdapter<Student> adapter = null;
+  private ArrayAdapter<Student> adapter = null;
 
   public void onSortButtonClicked(View view ){
       switch(view.getId()){
@@ -59,7 +57,6 @@ private ArrayAdapter<Student> adapter = null;
       }
       updateListView();
   }
-
 
   private void updateListView(){
     adapter.sort(sorter);
@@ -136,15 +133,11 @@ private ArrayAdapter<Student> adapter = null;
 
   // TODO find a way to avoid creating a new Adapter and ClickListeners each time!
   private void setStudentList(final List<Student> students) {
-
-
     adapter = new ArrayAdapter<Student> (
             this,
             android.R.layout.simple_list_item_1,
             android.R.id.text1,
             students);
-
-
     final ListView playerView = (ListView) findViewById(R.id.list_Students);
     playerView.setAdapter(adapter);
     playerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -174,6 +167,7 @@ private ArrayAdapter<Student> adapter = null;
   @Override
   public void onStart() {
     super.onStart();
+    Log.d(LOG_TAG, "onStart()");
   }
 
   @Override
