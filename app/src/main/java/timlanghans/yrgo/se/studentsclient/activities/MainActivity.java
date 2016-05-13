@@ -36,9 +36,6 @@ import timlanghans.yrgo.se.studentsclient.dataManager.IDataManager;
 
 public class MainActivity extends AppCompatActivity implements IClientCallbackListener{
 
-
-
-
   // this activity shares itself so other classes can get the App-Context
   public static Activity mainActivity;
 
@@ -115,6 +112,7 @@ private ArrayAdapter<Student> adapter = null;
       Intent intent = new Intent(this, SettingsActivity.class);
       startActivity(intent);
     }
+
     return true;
   }
 
@@ -138,11 +136,15 @@ private ArrayAdapter<Student> adapter = null;
 
   // TODO find a way to avoid creating a new Adapter and ClickListeners each time!
   private void setStudentList(final List<Student> students) {
+
+
     adapter = new ArrayAdapter<Student> (
             this,
             android.R.layout.simple_list_item_1,
             android.R.id.text1,
             students);
+
+
     final ListView playerView = (ListView) findViewById(R.id.list_Students);
     playerView.setAdapter(adapter);
     playerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
