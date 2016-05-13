@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements IClientCallbackLi
     cachedAtLabel.post(new Runnable() {
       @Override
       public void run() {
-        cachedAtLabel.setText( R.string.TEXT_LABLE_CACHEDAT + cachedAt);
+        cachedAtLabel.setText( getString(R.string.TEXT_LABLE_CACHEDAT) + cachedAt);
       }
     });
     Log.d(LOG_TAG, "chacheAt set to " + cachedAt);

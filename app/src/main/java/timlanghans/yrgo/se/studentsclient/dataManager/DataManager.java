@@ -62,13 +62,11 @@ public class DataManager implements IDataManager , ICallbackHandler, SharedPrefe
     public void getListOfStudents() {
         List<Student> students;
         try {
-            students =
-                    DbHandler.getInstance(MainActivity.mainActivity.getApplicationContext())
+            students = DbHandler.getInstance(
+                    MainActivity.mainActivity.getApplicationContext())
                              .getAllStudentsFromCache();
-
             clientBus.broadcastEvent(
                     new CallbackEvent(EventTag.STUDENTS_UPDATE, students));
-
             // start a background task
           // TODO cancel function! Only one at a time may run!
             new ServiceGetAllStudents().execute();
@@ -80,7 +78,6 @@ public class DataManager implements IDataManager , ICallbackHandler, SharedPrefe
 
     // TODO Fetch Registrations
     public void getListOfCourses(final int id) {
-
         try {
             new ServiceGetARegistration().execute(id);
         } catch (Exception e){
@@ -88,8 +85,10 @@ public class DataManager implements IDataManager , ICallbackHandler, SharedPrefe
         }
     }
 
-    // SERVICE CALL BACK HANDLING
 
+    //
+    // SERVICE CALL BACK HANDLING
+    //
 
     @Override
     public void receiveListOfStudents(List<Student> students) {
@@ -99,7 +98,6 @@ public class DataManager implements IDataManager , ICallbackHandler, SharedPrefe
         callCachedAtChanged();
         clientBus.broadcastEvent(new CallbackEvent(
                 EventTag.STUDENTS_UPDATE, getCachedStudents()));
-
         Log.d(LOG_TAG,"Broadcast list of students");
     }
 
@@ -169,8 +167,7 @@ public class DataManager implements IDataManager , ICallbackHandler, SharedPrefe
 
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-    // if (sharedPreferences != this.pref) return;
-    Log.i(LOG_TAG, "sharedPref " + sharedPreferences + " + key : " + key);
+    Log.d(LOG_TAG, "sharedPref " + sharedPreferences + " + key : " + key);
 
     if (key.equals("DATEFORMAT")){
        this.callCachedAtChanged();
